@@ -168,12 +168,11 @@ namespace esphome
                 }
 
                 // Hot water selected
-// #ifdef PHILIPS_EP3243
-//                 if (data[3] == led_off && data[4] == led_off && data[5] == led_off && data[6] == led_off && data[7] == led_second)
-// #else
-//                 if (data[3] == led_off && data[4] == led_on && data[5] == led_off && data[6] == led_off)
-// #endif
+#ifdef PHILIPS_EP3243
+                if (data[3] == led_off && data[4] == led_off && data[5] == led_off && data[6] == led_off && data[7] == led_second)
+#else
                 if (data[3] == led_off && data[4] == led_on && data[5] == led_off && data[6] == led_off)
+#endif
                 {
                     if (is_play_pause_blinking)
                     {
